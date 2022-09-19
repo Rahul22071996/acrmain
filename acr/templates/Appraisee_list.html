@@ -1,0 +1,225 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+<body>
+    <script type="text/javascript">
+        
+        function deparmental(){
+            let datas_1 = document.getElementById("radio-one").value;
+            let datas_2 = document.getElementById("radio-four").value;
+            console.log('no',datas_1)
+            console.log('no',datas_2)
+
+            
+            
+            if (datas_1 == "YES" && datas_2 == "NO"){
+               alert('Departmental Candidate has to submit valid score card of gate 2023 . Please refer advertisement for further information')
+
+
+            }
+            else{
+                console.log('yes')
+            }
+        }
+    </script>
+    
+    <style type="text/css">
+        .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #EC008B;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+  max-width: 600px;
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+    </style>
+    <div class="ps-page">
+        <div class="ps-about-business ps-contact-us">
+            <div class="container">
+                <nav class="ps-navigation--dashboard">
+                    <ul>
+                        <center><li  >
+                           
+                               <h2>List of Appraisee </h2>
+                            
+                        </li></center>
+                      
+                    </ul>
+                </nav>
+                <br>
+                    <br>
+                        <div class="container">
+                            <form action="/personal/details/" class="ps-form--contact" method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                   
+                                   
+                                    
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <table class="table table-bordered">
+                                                  <thead class="thead-dark">
+                                                    <tr>
+                                                      <th scope="col">SR.N</th>
+                                                      <th scope="col">NAME</th>
+                                                      <th scope="col">DESIGNATION</th>
+                                                       <th scope="col">FROM DATE</th>
+                                                       <th scope="col">TO DATE</th>
+                                                      <th scope="col">view</th>
+
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    {% for a in data %}
+                                                        
+                                                    <tr>
+                                                      <th scope="row">{{forloop.counter}}</th>
+                                                      <td>{{a.empName}}-{{a.empCode}} </td>
+                                                      <td>{{a.designation}}</td>
+                                                      <td>{{a.fromDate}}</td>
+                                                      <td>{{a.toDate}}</td>
+                                                      <td><a href="/Personal-Data/{{a.acrId}}" style="color: blue;"> FILL ACR</a></td>
+                                                    </tr>
+                                                    
+                                                    {% endfor %}
+                                                   
+
+                                                  </tbody>
+                                                </table>
+
+
+                                         <!--   {{data}} -->
+                                        </div>
+                                    </div>
+                                  
+
+                                         <!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <table class="table table-bordered">
+                                                  <thead class="thead-dark">
+                                                    <tr>
+                                                      <th scope="col">GRADE SCALE</th>
+                                                      <th scope="col">POINTS</th>
+                                                      <th scope="col">GRADES</th>
+                                                    
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <th scope="row">EXCELLENT</th>
+                                                      <td>8.0-10</td>
+                                                      <td>A+</td>
+                                                     
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row">VERY GOOD</th>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td>Nos</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row">3</th>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td>Nos</td>
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">4</th>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td>Nos</td>
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">5</th>
+                                                      <td></td>
+                                                      <td></td>
+                                                      <td>Nos</td>
+                                                    </tr>
+                                                    
+
+                                                  </tbody>
+                                                </table>
+
+                                                
+                                            
+                                        </div>
+                                    </div> -->
+                                    <input name="company_token" type="hidden" value="{{res}}">
+                                    </input>
+                                </div>
+                                <!-- btn btn-primary aglin-left me-2 btn-lg -->
+                                <div class="ps-form__submit">
+                                    <!-- <input name="bussiness_inquire" type="hidden" value="bussiness_inquire">
+                                        <a href="#" class="btn ps-btn ps-btn--gradient  me-2 btn-lg" type="reset" style="color: white;">Previous</a>
+                                        <button class="ps-btn  ps-btn--gradient getSubmitButton" style="float: right;" type="submit">
+                                            Save
+                                        </button>
+                                    </input> -->
+                                </div>
+                            </form>
+                        </div>
+                    </br>
+                </br>
+            </div>
+        </div>
+    </div>
+    <div id="back2top">
+        <i class="pe-7s-angle-up">
+        </i>
+    </div>
+    <div class="ps-site-overlay">
+    </div>
+</body>
+{% endblock %}

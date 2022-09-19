@@ -1,0 +1,767 @@
+{% extends 'basee.html'%}
+{% block container %}
+{% load static %}
+<body>
+    <script type="text/javascript">
+        function deparmental(){
+            let datas_1 = document.getElementById("radio-one").value;
+            let datas_2 = document.getElementById("radio-four").value;
+            console.log('no',datas_1)
+            console.log('no',datas_2)
+
+            
+            
+            if (datas_1 == "YES" && datas_2 == "NO"){
+               alert('Departmental Candidate has to submit valid score card of gate 2023 . Please refer advertisement for further information')
+
+
+            }
+            else{
+                console.log('yes')
+            }
+        }
+    </script>
+    <style type="text/css">
+        .switch-field {
+  display: flex;
+  margin-bottom: 36px;
+  overflow: hidden;
+}
+
+.switch-field input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+  cursor: pointer;
+}
+
+.switch-field input:checked + label {
+  background-color: #EC008B;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+/* This is just for CodePen. */
+
+.form {
+  max-width: 600px;
+  font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+  font-weight: normal;
+  line-height: 1.625;
+  margin: 8px auto;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+    </style>
+    <div class="ps-page">
+        <div class="ps-about-business ps-contact-us">
+            <div class="container">
+                <nav class="ps-navigation--dashboard">
+                    <ul>
+                        <center>
+                            <li>
+                                <h2>
+                                    APPRAISAL REPORT FOR SESSION 2021-2022
+                                </h2>
+                            </li>
+                        </center>
+                    </ul>
+                </nav>
+                <br>
+                    <br>
+                        <div class="container">
+                           
+                                <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <center>
+                                                <label style="font-weight: bold;">
+                                                    Part I (PERSONAL DATA)
+                                                </label>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <table class="table">
+                                                <tr>
+                                                    <th style="font-weight: bold;">
+                                                        1.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Name in full
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data_1.empName}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        2.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Date of first appointment in
+                                                        <br>
+                                                            Board/Company's Service 
+(whichever is applicable)
+                                                        </br>
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data_1.joiningDate}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        3.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Designation of first 
+appointment in Board
+                                                        <br>
+                                                            /Company's Service 
+(whichever is applicable)
+                                                        </br>
+                                                    </th>
+                                                    <th scope="col">
+                                                        {{data_7.name}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        4.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Employee Number
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data.empId}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        5.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Present Designation
+                                                    </th>
+                                                    <th scope="col">
+                                                        {{data_7.name}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        6.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Date of Appointment in 
+present post
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data.presentApoointmentDate}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        7.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Mode of Appointment
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data.appointmentMode}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        8.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Class Type
+                                                    </th>
+                                                    <th scope="col">
+                                                         {{data_1.employeeType}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        9.
+                                                    </th>
+                                                    <th scope="col" style="font-weight: bold;">
+                                                        Present place of posting
+                                                    </th>
+                                                    <th scope="col">
+                                                       {{data_1.region}},{{data_1.circle}},{{data_1.division}},{{data_1.subDivision}},{{data_1.dc}}
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-md-12 col-lg-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <center>
+                                                <label style="font-weight: bold;">
+                                                    Part II (DUTIES / JOB ASSIGNMENT)
+                                                </label>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                                1. Various posts held during the reporting year
+                                            </b>
+                                            <br>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2">
+                                                            </th>
+                                                            <th rowspan="2" style="font-weight: bold;">
+                                                                Designation
+                                                            </th>
+                                                            <th rowspan="2" style="font-weight: bold;">
+                                                                Function
+                                                            </th>
+                                                            <th rowspan="2" style="font-weight: bold;">
+                                                                Location
+                                                            </th>
+                                                            <th colspan="2" style="font-weight: bold;">
+                                                                Period
+                                                            </th>
+                                                            <th rowspan="2" style="font-weight: bold;">
+                                                                Name of Reporting Officer
+                                                            </th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="font-weight: bold;">
+                                                                Form
+                                                            </th>
+                                                            <th style="font-weight: bold;">
+                                                                To
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      {% for a in data_2 %}
+                                                      {% if a.is_additional == False %}
+                                                        <tr>
+                                                            <th scope="row">
+                                                                1
+                                                            </th>
+                                                            <td>
+                                                              {{a.designation}}
+                                                            </td>
+                                                            <td>
+                                                              {{a.function}}
+                                                            </td>
+                                                            <td>
+                                                              {{a.region}},{{a.circle}},{{a.division}},{{a.sub_division}},{{a.dc}}
+                                                            </td>
+                                                            
+                                                            <td>
+                                                               {{a.from_date}}
+                                                            </td>
+                                                            <td>
+                                                              {{a.to_date}}
+                                                            </td>
+                                                            <td>
+                                                              {{a.reporting_officer}}
+                                                            </td>
+                                                        </tr>
+                                                        {% endif %}
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </br>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                                2. Any Additional Charge held during this session :
+                                            </b>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Functional Assigned Section 
+Designation
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Place of posting
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            From Date
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            To Date
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   {% for a in data_2 %}
+                                                      {% if a.is_additional == True %}
+                                                    <tr>
+
+                                                        <th scope="row">
+                                                            1
+                                                        </th>
+                                                        <td>
+                                                          {{a.function}} <br>{{a.designation}}
+                                                        </td>
+                                                        <td>
+                                                           {{a.region}},{{a.circle}},{{a.division}},{{a.sub_division}},{{a.dc}}
+                                                        </td>
+                                                        <td>
+                                                         {{a.from_date}}
+                                                        </td>
+                                                        <td>
+                                                           {{a.to_date}}
+                                                        </td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                                3. Brief description of duties :
+                                            </b>
+                                            <input class="form-control" value="{{data.briefDesc}}" type="text" readonly="">
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                                4. Quantitative / Physical / Financial targets objectives set by you or set for you and your achievements 
+against each. Clearly indicate your specific contribution
+                                            </b>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2">
+                                                            Key Performance Indicators
+                                                        </th>
+                                                        <th rowspan="2">
+
+                                                           {% if val == False %}
+                                                            Office
+                                                           {% else %}
+                                                           Field
+                                                           {% endif %}
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            SECTION
+                                                        </th>
+                                                        <td>
+                                                             {{data_1.function}}
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                                Weightage to this section will be 70%
+                                            </b>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            SR.N
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Key Performance Indicators
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            At the start 
+of FY
+/Reporting 
+period
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            At the end of 
+FY
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Achievements
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Remark
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                  {% for a in data_3 %}
+                                                    <tr>
+                                                        <th scope="row">{{forloop.counter}}
+                                                        </th>
+                                                        <td>
+                                                          {{a.kpiId}}
+
+                                                        </td>
+
+                                                        <td>
+                                                         <!--   {{a.startOfFy|wordwrap:5|linebreaksbr}} -->
+                                                         {{a.startOfFy|wordwrap:5|linebreaksbr }}
+                                                        </td>
+                                                        <td>
+                                                          {{a.endOfFy}}
+                                                        </td>
+                                                        <td>
+                                                           {{a.achievements|wordwrap:5|linebreaksbr }}
+                                                        </td>
+                                                        <td>
+                                                          {{a.remark|wordwrap:10|linebreaksbr }}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <b>
+                                              Other  Key Performance Indicators's -:
+                                            </b>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            SR.N
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Key Performance Indicators
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            At the start 
+of FY
+/Reporting 
+period
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            At the end of 
+FY
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Achievements
+                                                        </th>
+                                                        <th rowspan="2" style="font-weight: bold;">
+                                                            Remark
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                  {% for a in data_6 %}
+                                                    <tr>
+                                                        <th scope="row">{{forloop.counter}}
+                                                        </th>
+                                                        <td>
+                                                          {{a.kpi}}
+
+                                                        </td>
+
+                                                        <td>
+                                                         <!--   {{a.startOfFy|wordwrap:5|linebreaksbr}} -->
+                                                         {{a.startOfFy|wordwrap:5|linebreaksbr }}
+                                                        </td>
+                                                        <td>
+                                                          {{a.endOfFy}}
+                                                        </td>
+                                                        <td>
+                                                           {{a.achievements|wordwrap:5|linebreaksbr }}
+                                                        </td>
+                                                        <td>
+                                                          {{a.remark|wordwrap:10|linebreaksbr }}
+                                                        </td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                          <label><b>Mandatory KPI's -: (System Generated)</b></label>
+                                            <table class="table table-bordered">
+                                                  <thead class="thead-dark">
+                                                    <tr>
+                                                      <th scope="col">70%</th>
+                                                      <th scope="col">Key Performance Indicators</th>
+                                                     
+                                                      <th scope="col">At the Start of FY/Reporting Period</th>
+                                                      <th scope="col">At The End of FY</th>
+                                                     
+
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+
+                                                    <tr>
+                                                      <th scope="row">1 
+                                                    </th>
+                                                      <td>Percentage(%) of Assessment Billing</td>
+                                                    
+                                                       <td>{{data_4.startPerAssessmentBilling}}</td>
+                                                      <td>{{data_4.endPerAssessmentBilling}}</td>
+                                                      
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row">2</th>
+                                                      <td>Billing Efficiency (%)</td>
+                                                   
+                                                       <td>{{data_4.startBillingEfficiency}}</td>
+                                                      <td>{{data_4.endBillingEfficiency}}</td>
+                                                     
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row">3</th>
+                                                      <td>Collection Efficiency (%)</td>
+                                                     
+                                                       <td>{{data_4.startCollectionEfficiency }}</td>
+                                                      <td>{{data_4.endCollectionEfficiency }}</td>
+                                                     
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">4</th>
+                                                      <td>AT&C Loss (%)</td>
+                                                     
+                                                       <td>{{data_4.startAtc}}</td>
+                                                      <td>{{data_4.endAtc}}</td>
+                                                      
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">5</th>
+                                                      <td>AMR Reading (%)</td>
+                                                     
+                                                       <td>{{data_4.startPercentageAmr}}</td>
+                                                      <td>{{data_4.endPercentageAmr}}</td>
+                                                     
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">6</th>
+                                                      <td>Failed DTR (%)</td>
+                                                     
+                                                       <td>{{data_4.startFailPercentageDtr}}</td>
+                                                      <td>{{data_4.endFailPercentageDtr}}</td>
+                                                      
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">7</th>
+                                                      <td>CRPU (Cash Realization Per Unit)</td>
+                                                    
+                                                       <td>{{data_4.startCrpu}}</td>
+                                                      <td>{{data_4.endCrpu}}</td>
+                                                      
+                                                    </tr> <tr>
+                                                      <th scope="row">8</th>
+                                                      <td>Flat Rate Recovery</td>
+                                                     
+                                                       <td>{{data_4.startFlatRatePercentagePaidBn}}</td>
+                                                      <td>{{data_4.endFlatRatePercentagePaidBn}}</td>
+                                                      
+                                                    </tr> <tr>
+                                                      <th scope="row">9</th>
+                                                      <td>NSC of Temporary Consumer</td>
+                                                     
+                                                       <td>{{data_4.startKpiTempConsumerCountNsc}}</td>
+                                                      <td>{{data_4.endKpiTempConsumerCountNsc}}</td>
+                                                     
+                                                    </tr> <tr>
+                                                      <th scope="row">10</th>
+                                                      <td>Avg. Supply Hour Agriculture</td>
+                                                     
+                                                       <td>{{data_4.startKpiAgriShmsAvg}}</td>
+                                                      <td>{{data_4.endKpiAgriShmsAvg}}</td>
+                                                     
+                                                    </tr> <tr>
+                                                      <th scope="row">11</th>
+                                                      <td>Avg. Supply Hour Non-Agriculture</td>
+                                                     
+                                                       <td>{{data_4.startKpiNonAgrAvg}}</td>
+                                                      <td>{{data_4.endKpiNonAgrAvg}}</td>
+                                                      
+                                                    </tr> <tr>
+                                                      <th scope="row">12</th>
+                                                      <td>Metered Consumer (Nos.)</td>
+                                                     
+                                                       <td>{{data_4.startMeteredConsumer}}</td>
+                                                      <td>{{data_4.endMeteredConsumer}}</td>
+                                                      
+                                                    </tr> <tr>
+                                                      <th scope="row">13</th>
+                                                      <td>Un-Metered Consumer (Nos.)</td>
+                                                     
+                                                       <td>{{data_4.startUnMeterConsumer}}</td>
+                                                      <td>{{data_4.endUnMeterConsumer}}</td>
+                                                      
+                                                    </tr>
+                                                     <tr>
+                                                      <th scope="row">14</th>
+                                                      <td>Defective Meter (Nos.)</td>
+                                                      
+                                                       <td>{{data_4.startDefectiveMeter}}</td>
+                                                      <td>{{data_4.endDefectiveMeter}}</td>
+                                                     
+                                                    </tr>
+
+                                                  </tbody>
+                                                </table>
+
+                                                
+                                            
+                                        </div>
+                                    </div>
+                                    {% if data_5 %}
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                        <div class="form-group">
+                                            <label>
+                                                <b>
+                                                    Mandatory KPI's -: (User Input)
+                                                </b>
+                                            </label>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">
+                                                            SR.N
+                                                        </th>
+                                                        <th scope="col">
+                                                            Key Performance Indicators
+                                                        </th>
+                                                        <th scope="col">
+                                                            At the Start of FY/Reporting Period
+                                                        </th>
+                                                        <th scope="col">
+                                                            At The End of FY
+                                                        </th>
+                                                        <th>Achievements</th>
+                                                        <th>Remark</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                  {% for data in  data_5%}
+                                                    <tr>
+                                                        <th scope="row">
+                                                            {{forloop.counter}}
+                                                        </th>
+                                                        <td>
+                                                           {{data.kpi}}
+                                                        </td>
+                                                        <td>
+                                                          {{data.startOfFy}}
+                                                        </td>
+                                                        <td>
+                                                          {{data.endOfFy}}
+                                                          
+                                                        </td>
+                                                          <td>{{data.achievements}}</td>
+                                                          <td>{{data.remark}}</td>
+                                                    </tr>
+                                                   
+                                                    {% endfor %}
+                                                   
+                                                  
+                                                 
+                                                  
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="form-group"><b>5. Shortfall with reference to items / targets / objectives referred to in item 3 (Mention constraints, if any, 
+in achieving the targets and remedies)</b>
+<textarea  class="form-control" readonly="">{{data.shortFall}}</textarea>
+</div></div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="form-group"><b>6. Comment on your special characteristics and / or any abilities which may justify your selection for 
+special assignment (if any)</b>
+<textarea  class="form-control" readonly=""> {{data.comment}}</textarea>
+</div></div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="form-group"><b>7. Property Return Statement sent to RAO</b>
+<textarea  class="form-control" readonly="">{{data.isPRSToRao}}  ({{data.isPRSToRaoDate}})</textarea>
+</div></div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="form-group"><b>8. Is any relatives are involved in contracting or registered as contractor or Firms/Companies having 
+past or current business or financial dealing with the Company ?
+</b>
+<textarea  class="form-control" readonly="">{{data.isAnyRelative}}</textarea>
+</div></div>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"><div class="form-group"><b>9. Relative Details
+
+</b>
+<textarea  class="form-control" readonly="">{{data.relativeDetails}}</textarea>
+</div></div>
+                                    
+                                   
+                                 
+                                    <input name="company_token" type="hidden" value="{{res}}">
+                                    </input>
+                                </div>
+                                <!-- btn btn-primary aglin-left me-2 btn-lg -->
+                                <div class="ps-form__submit">
+                                    
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                  <div class="form-group">
+                                   <center> <button class=" btn btn-lg btn-primary"><a href="/acr/{{id}}"> NEXT</a></button></center>
+                                  </div>
+                                </div>
+                         
+                        </div>
+                    </br>
+                </br>
+            </div>
+        </div>
+    </div>
+    <div id="back2top">
+        <i class="pe-7s-angle-up">
+        </i>
+    </div>
+    <div class="ps-site-overlay">
+    </div>
+</body>
+{% endblock %}
